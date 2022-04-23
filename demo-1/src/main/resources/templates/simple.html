@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://thymeleaf.org">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Book Exchange</title>
+  
+</head>
+<body>
+<div class="form-container sign-up-container">
+		<form th:action="@{/save}" th:object="${newuser}" method="POST">
+			<h2>Create Account</h2>
+			<!-- <div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div> -->
+			<input type="text" th:field="${newuser.name}" placeholder="Full Name" />
+			<input type="text" th:field="${newuser.userName}" placeholder="Display Name" />
+			<input type="email" th:field="${newuser.emailId}" placeholder="Email" />
+			<input type="number" th:field="${newuser.age}"placeholder="Age" />
+			<input type="password" th:field="${newuser.userPassword}" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	</body>
+	</html>
