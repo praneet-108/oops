@@ -31,6 +31,15 @@ public class UserService {
 	public List<User> findAll(){
 		return (List<User>) usRepo.findAll();
 	}
+	public User getUser(String email,String pass){
+		for (User us : usRepo.findAll()) {
+			if (us.getEmail().toLowerCase().contains(email.toLowerCase()) && us.getUserpassword().toLowerCase().contains(pass.toLowerCase())) 
+			{
+				return us;
+			}
+		}
+		return null;
+	}
 	
 	
 }
